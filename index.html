@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Melodique</title>
+    <meta name="keywords" content="javascript, google chrome, html5, music, chords, procedural, algorithmic">
+    <meta name="description" content="Melodique is a tool to generate melodic phrases procedurally based on random chord progressions.">
+    <script language="javascript" src="main.js"></script>
+    <script language="javascript" src="utility.js"></script>
+    <script language="javascript" src="canvas.js"></script>
+    <script language="javascript" src="music.js"></script>
+    <script language="javascript" src="synth.js"></script>
+    <script language="javascript" src="envelope.js"></script>
+    <script language="javascript" src="vanalog.js"></script>
+    <script language="javascript" src="sampling.js"></script>
+    <script language="javascript" src="mixer.js"></script>
+    <script language="javascript" src="piece.js"></script>
+    <script language="javascript" src="melody.js"></script>
+    <link rel=stylesheet href="stylesheet.css" type="text/css">
+  </head>
+  <body bgcolor="#000000">
+
+    <a href="https://github.com/maximecb/Turing-Drawings">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="forkme.png" alt="Fork me on GitHub">
+    </a>
+
+    <div class="title">
+    Melodique: Algorithmic Melodic Phrase Generator
+    </div>
+
+    <div style="margin-left:auto; margin-right:auto; text-align:center; width:650px;">
+    <form name="params">
+
+        <fieldset>
+            <legend style="text-align:left">Scale</legend>
+            Root note:
+            <select id="scaleRoot">
+            </select>
+            Scale type:
+            <select id="scaleType">
+            </select>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend style="text-align:left">Duration and timing</legend>
+            Duration (bars):
+            <input id="duration" type="text" size="2" value="2">            
+            Tempo:
+            <input id="tempo" type="text" size="3" value="100">
+            Time signature:
+            <input id="timeSigNum" type="text" size="1" value="4">
+            <input id="timeSigDenom" type="text" size="1" value="4">
+        </fieldset>
+
+        <fieldset id="chordTypes">
+            <legend style="text-align:left">Chord types allowed</legend>
+        </fieldset>
+
+        <fieldset>
+            <legend style="text-align:left">Chord options</legend>
+            Root inv.<input id="rootInv" type="checkbox" checked>
+            End on I<input id="endOnI" type="checkbox" checked>
+        </fieldset>
+
+        <fieldset id="melPatterns">
+            <legend style="text-align:left">Melodic patterns allowed</legend>
+        </fieldset>
+
+        <fieldset>
+          <legend style="text-align:left">Actions</legend>
+          <button type="button" onClick="genMelody();">Generate</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" onClick="playAudio();">Play Audio</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" onClick="stopAudio();">Stop Audio</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" onClick="exportMIDI();">Export MIDI</button>
+        </fieldset>
+
+    </form>
+    </div>
+
+    <div style="text-align:center; margin-left:auto; margin-right:auto;">
+    <textarea id="chordText" rows="1" cols="70" readonly style="resize: none; text-align:center; background-color:#000000; color:#FFFFFF; border-color:#FFFFFF;">Click "generate" to produce a new melodic phrase.</textarea>
+    </div>
+
+    <div style="height:10px;"></div>
+    <div align="center">
+      <canvas id="canvas">
+        Your browser does not support the canvas element.
+      </canvas>
+    </div>
+    <div style="height:10px;"></div>
+
+    <div style="margin-left:auto; margin-right:auto; text-align:justify; width:650px;">
+    Melodique is a tool to generate melodic phrases procedurally based on random
+    chord progressions. It is intended to help those who wish to learn about chord
+    progressions and the basics of compositions as well as those looking for new
+    melody ideas. The controls at the top of the page can be used to adjust various
+    parameters affecting the way in which the melodic phrases are generated.
+    </div>
+
+    <div class="copyright">
+    Copyright &copy; 2012 Maxime Chevalier-Boisvert
+    </div>
+
+  </body>
+</html>
+
