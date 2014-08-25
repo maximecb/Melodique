@@ -140,7 +140,7 @@ function init()
         piece.setTime(0);
 
         // Create a JS audio node and connect it to the destination
-        jsAudioNode = audioCtx.createJavaScriptNode(bufferSize, 2, 2);
+        jsAudioNode = audioCtx.createScriptProcessor(bufferSize, 2, 2);
         jsAudioNode.onaudioprocess = genAudio;
 	    jsAudioNode.connect(audioCtx.destination);
 
