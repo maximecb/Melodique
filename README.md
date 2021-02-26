@@ -8,6 +8,6 @@ produced by a built-in virtual analog sound synthesis engine. This project is
 distributed under a modified BSD license.
 
 You can try Melodique at the following URL:
-[http://maximecb.github.com/Melodique/](http://maximecb.github.com/Melodique/)
+[http://maximecb.github.io/Melodique/](http://maximecb.github.io/Melodique/)
 
 
